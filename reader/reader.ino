@@ -1,5 +1,12 @@
+// RST --> 22
+// SDA --> 21
+// SCK --> 18
+// MOSI --> 23
+// MISO --> 19
+
 #include <SPI.h>
 #include <MFRC522.h>
+
 #include "NfcAdapter.h"
 
 #include <WiFi.h>
@@ -75,5 +82,4 @@ void loop(void)
 			mb.Ireg(2, payload[2]);
 		}
 	}
-	delay(5000);
 }

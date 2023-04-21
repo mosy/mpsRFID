@@ -1,4 +1,8 @@
-
+// RST --> 22
+// SDA --> 21
+// SCK --> 18
+// MOSI --> 23
+// MISO --> 19
 #include <SPI.h>
 #include <MFRC522.h>
 #include "NfcAdapter.h"
@@ -21,10 +25,7 @@ void loop() {
     if (nfc.tagPresent()) {
         Serial.println("Writing record to NFC tag");
         NdefMessage message = NdefMessage();
-        message.addUriRecord("https://arduino.cc");
-        message.addUriRecord("autofaget.no");
-        message.addUriRecord("gand.vgs.no");
-        message.addUriRecord("gand.vgs.no");
+        message.addUriRecord("def");
         bool success = nfc.write(message);
         if (success) {
           Serial.println("\tSuccess. Try reading this tag with your phone.");        
