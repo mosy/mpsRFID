@@ -25,7 +25,9 @@ void loop() {
     if (nfc.tagPresent()) {
         Serial.println("Writing record to NFC tag");
         NdefMessage message = NdefMessage();
-        message.addUriRecord("def");
+        message.addTextRecord("Fred-Olav Mosdal");
+        message.addTextRecord("Skaraslåtten 10");
+        message.addTextRecord("4326 Sandnes");
         bool success = nfc.write(message);
         if (success) {
           Serial.println("\tSuccess. Try reading this tag with your phone.");        
